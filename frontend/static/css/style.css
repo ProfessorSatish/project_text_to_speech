@@ -1,0 +1,145 @@
+/* --- General Body & Font Styling --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* A modern, clean gradient background */
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #333;
+}
+
+/* --- Main Container --- */
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* --- TTS Card Layout --- */
+.tts-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    /* A subtle shadow for a "floating" effect */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Smooth transition for any size changes */
+    transition: all 0.3s ease;
+}
+
+h1 {
+    margin-top: 0;
+    font-weight: 700;
+    color: #333;
+}
+
+p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* --- Textarea & Select Dropdown Styling --- */
+textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Style for when the textarea or select is focused */
+textarea:focus, select:focus {
+    outline: none;
+    border-color: #764ba2;
+    box-shadow: 0 0 8px rgba(118, 75, 162, 0.2);
+}
+
+/* --- Button Styling --- */
+#generate-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #5a67d8, #8a5fcf);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For positioning the loader */
+}
+
+#generate-btn:hover {
+    background: linear-gradient(135deg, #4c58b8, #7d4ac0);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+#generate-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* --- Loading Spinner --- */
+.loader {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid #fff;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hide button text when loading */
+#generate-btn.loading .btn-text {
+    display: none;
+}
+
+/* --- Audio Player Styling --- */
+#audio-player {
+    width: 100%;
+    margin-top: 25px;
+    display: none; /* Hidden by default */
+}
+
+/* --- Error Message Styling --- */
+.error {
+    color: #e53e3e; /* A clear, but not jarring, red */
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 20px; /* Reserve space to prevent layout shifts */
+}
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .tts-card {
+        padding: 20px;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+}
