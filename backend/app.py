@@ -1,3 +1,5 @@
+from gtts import gTTS
+
 import sys
 import subprocess
 import os
